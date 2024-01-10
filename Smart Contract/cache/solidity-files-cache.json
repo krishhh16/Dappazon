@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/zeref/Projects/Blockchain stuff/Dappazon/Smart Contract/contracts/Dappazon.sol": {
-      "lastModificationDate": 1704825151154,
-      "contentHash": "82983a94888b2245536deac48acfa0f5",
+      "lastModificationDate": 1704876974257,
+      "contentHash": "848224945d438adf9648973d0c9ad5a1",
       "sourceName": "contracts/Dappazon.sol",
       "solcConfig": {
         "version": "0.8.19",
