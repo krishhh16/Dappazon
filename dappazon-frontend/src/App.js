@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ethers } from 'ethers'
 import Section from "./components/Section";
 import Navigation from "./components/Navbar";
+import Product from "./components/Product";
 function App() {
   const address = '0x5fbdb2315678afecb367f032d93f642f64180aa3'
   const abi = [
@@ -277,11 +278,11 @@ function App() {
   const [electronics, setElectronics] = useState(null)
   const [clothing, setClothing] = useState(null)
   const [toys, setToys] = useState(null)
-  const debugHandler = () => {
-    console.log(electronics[0], clothing, toys)
-  }
+  const [toggle, setToggle] = useState(false)
+  const [item, setItem] = useState({})
   const togglePop = () => {
-    console.log('togglePop..')
+    setItem(item)
+    toggle ? setToggle(false) : setToggle(true)
   }
   const loadBlockchainData = async () => {
     const provider = new ethers.BrowserProvider(window.ethereum)
@@ -326,7 +327,9 @@ function App() {
         </div>
       )}
 
-
+      {toggle && (
+        <Product item={item} provider={provider} account={account} dappazon={dappazon} togglePop={togglePop} />
+      )}
     </div>
 
   );
